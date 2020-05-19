@@ -1,0 +1,47 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <canvas id="canvas" width=1200 height=800></canvas><br>
+        Amount of apples:
+        <select id="applesAmount" name="applesAmount">
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+          <button type="button" id="generate" onclick="generate()">Generate</button>
+          <button type="button" id="collect" disabled onclick="collect()">Collect</button>
+    </body>
+    <script  id="vertex-shader" type="x-shader/x-vertex">
+        attribute vec4 a_position;
+        attribute vec2 a_texcoord;
+        
+        uniform mat4 u_matrix;
+        
+        varying vec2 v_texcoord;
+        
+        void main() {
+           gl_Position = u_matrix * a_position;
+           v_texcoord = a_texcoord;
+        }
+        </script>
+        <script  id="fragment-shader" type="x-shader/x-fragment">
+        precision mediump float;
+        
+        varying vec2 v_texcoord;
+        
+        uniform sampler2D u_texture;
+        
+        void main() {
+           gl_FragColor = texture2D(u_texture, v_texcoord);
+        }
+        </script>
+    <script src="matrixUtil.js"></script>
+    <script src="gl.js"></script>
+    <script src="generate.js"></script>
+</html>
