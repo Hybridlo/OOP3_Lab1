@@ -1,4 +1,6 @@
-import com.sun.tools.javac.util.Pair;
+package Lab1;
+
+import javafx.util.Pair;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,12 +17,12 @@ class MessageHandlerTest {
 
         List<Pair<Integer, Integer>> decoded = handler.decode(message);
 
-        assertEquals(10, (int) decoded.get(0).fst);
-        assertEquals(15, (int) decoded.get(0).snd);
-        assertEquals(20, (int) decoded.get(1).fst);
-        assertEquals(25, (int) decoded.get(1).snd);
-        assertEquals(23424, (int) decoded.get(2).fst);
-        assertEquals(87679, (int) decoded.get(2).snd);
+        assertEquals(10, (int) decoded.get(0).getKey());
+        assertEquals(15, (int) decoded.get(0).getValue());
+        assertEquals(20, (int) decoded.get(1).getKey());
+        assertEquals(25, (int) decoded.get(1).getValue());
+        assertEquals(23424, (int) decoded.get(2).getKey());
+        assertEquals(87679, (int) decoded.get(2).getValue());
     }
 
     @Test

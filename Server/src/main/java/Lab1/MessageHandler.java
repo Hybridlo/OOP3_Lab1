@@ -1,6 +1,9 @@
-import com.sun.tools.javac.util.Pair;
+package Lab1;
+
+import javafx.util.Pair;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MessageHandler {
@@ -8,7 +11,7 @@ public class MessageHandler {
         List<Pair<Integer, Integer>> result = new ArrayList<>();
         int index = 0;
 
-        if (message.length() > 0 && message.charAt(index) == '[') {
+        if (!message.isEmpty() && message.charAt(index) == '[') {
             index++;
             while (message.charAt(index) == '[') {
                 int comma = message.indexOf(',', index);
@@ -29,7 +32,7 @@ public class MessageHandler {
             }
 
         } else {
-            return null;
+            return Collections.emptyList();
         }
 
         return result;

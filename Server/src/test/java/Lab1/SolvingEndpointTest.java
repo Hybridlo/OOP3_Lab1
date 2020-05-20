@@ -1,4 +1,6 @@
-import com.sun.tools.javac.util.Pair;
+package Lab1;
+
+import javafx.util.Pair;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

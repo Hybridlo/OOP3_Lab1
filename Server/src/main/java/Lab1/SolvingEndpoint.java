@@ -1,4 +1,6 @@
-import com.sun.tools.javac.util.Pair;
+package Lab1;
+
+import javafx.util.Pair;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
@@ -14,7 +16,7 @@ public class SolvingEndpoint {
             = new CopyOnWriteArraySet<>();
 
     @OnOpen
-    public void onOpen(Session session) throws IOException {
+    public void onOpen(Session session) {
         solvingEndpoints.add(this);
     }
 
@@ -22,6 +24,11 @@ public class SolvingEndpoint {
     public void onMessage(Session session, String message) throws IOException {
         MessageHandler handler = new MessageHandler();
         List<Pair<Integer, Integer>> decoded = handler.decode(message);
+
+        if (decoded.isEmpty()) {
+            session.getBasicRemote().sendText("Error: empty or invalid list");
+            return;
+        }
 
         List<Integer> solved = solve(decoded);
 
@@ -31,16 +38,18 @@ public class SolvingEndpoint {
     }
 
     @OnClose
-    public void onClose(Session session) throws IOException {
+    public void onClose(Session session) {
         solvingEndpoints.remove(this);
     }
 
     @OnError
-    public void onError(Session session, Throwable throwable) { }
+    public void onError(Session session, Throwable throwable) {
+        //no errors to process
+    }
 
     double distance(Pair<Integer, Integer> a, Pair<Integer, Integer> b) {
         return Math.sqrt(
-                Math.pow((a.fst - b.fst), 2) + Math.pow((a.snd - b.snd), 2)
+                Math.pow((a.getKey() - b.getKey()), 2) + Math.pow((a.getValue() - b.getValue()), 2)
         );
     }
 

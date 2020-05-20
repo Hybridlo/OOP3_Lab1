@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MessageHandlerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-05-19T21:21:06" hostname="WIN-IJ6BLPP633L" time="0.012">
+<testsuite name="MessageHandlerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-05-20T10:51:21" hostname="WIN-IJ6BLPP633L" time="0.025">
   <properties/>
-  <testcase name="testDecode()" classname="MessageHandlerTest" time="0.002"/>
-  <testcase name="testEncode()" classname="MessageHandlerTest" time="0.009"/>
+  <testcase name="testDecode()" classname="MessageHandlerTest" time="0.005"/>
+  <testcase name="testEncode()" classname="MessageHandlerTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

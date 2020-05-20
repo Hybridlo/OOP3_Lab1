@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Lab1.MessageHandlerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-05-20T10:51:21" hostname="WIN-IJ6BLPP633L" time="0.069">
+  <properties/>
+  <testcase name="testDecode()" classname="Lab1.MessageHandlerTest" time="0.043"/>
+  <testcase name="testEncode()" classname="Lab1.MessageHandlerTest" time="0.023"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

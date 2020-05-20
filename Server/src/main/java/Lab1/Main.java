@@ -1,3 +1,5 @@
+package Lab1;
+
 import org.glassfish.tyrus.server.Server;
 
 import java.io.BufferedReader;
