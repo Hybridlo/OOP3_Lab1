@@ -57,6 +57,8 @@ function draw() {
     gl.clear(gl.COLOR_BUFFER_BIT);
 
     drawInfos.forEach(function(drawInfo) {
+        if (!drawInfo)      //don't draw if null
+            return;
     drawImage(
         drawInfo.textureInfo.texture,
         drawInfo.textureInfo.width,
